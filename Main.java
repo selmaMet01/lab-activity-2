@@ -1,7 +1,7 @@
 public class Main {
     public static void main(String[] args) {
 
-        Vehicle v1 = new Vehicle("Mitsubishi", "Lancer", 1973);
+        Vehicle v1 = new Vehicle("Mitsubishi","Lancer", 1973);
 
         v1.displayInfo();
         System.out.println("Age: " + v1.calculateAge());
