@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 # Laboratory Activity 4 - Encapsulation 
 Metoshiela Selma   
 BSIT 2A 
@@ -42,4 +40,3 @@ Initial year is 2026
  
 New vehicle with year 2027   
 Initial year is 2026
->>>>>>> 9fe502c (Complete Lab 4 encapsulation refactor)
