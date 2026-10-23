@@ -1,54 +1,41 @@
 public class Main {
+   public static void printDetails(Vehicle vehicle) {
+        vehicle.displayInfo();
+   }
+
     public static void main(String[] args) {
-
-        Vehicle v1 = new Vehicle("Mitsubishi", "Lancer", 1973);
-
-        v1.displayInfo();
-        System.out.println("Brand: " + v1.getBrand());
-        System.out.println("Model: " + v1.getModel());
-        System.out.println("Year: " + v1.getYear());
-        System.out.println("Age: " + v1.calculateAge());
-        System.out.println("Vintage: " + v1.isVintage());
+       // DEMO 1: A parent reference can refer to a child object.
+        System.out.println("=== 1. Parent Reference ===");
+        Vehicle vehicle = new Car("Mazda", "CX-5", 2022, 4);
+        vehicle.displayInfo();
         System.out.println();
-
-        Vehicle v2 = new Vehicle("Honda", "Civic", 1972);
-
-        v2.displayInfo();
-        System.out.println("Brand: " + v2.getBrand());
-        System.out.println("Model: " + v2.getModel());
-        System.out.println("Year: " + v2.getYear());
-        System.out.println("Age: " + v2.calculateAge());
-        System.out.println("Vintage: " + v2.isVintage());
+        
+        vehicle = new Motorcycle("Honda", "Beat", 2023, "Gas");
+        vehicle.displayInfo();
         System.out.println();
+    
+       // DEMO 2: Method Parameter
+        System.out.println("=== 2. Method Parameter ===");
+        Car car = new Car("Ford", "Ranger", 1983, 4);
+        Motorcycle motorcycle = new Motorcycle("Honda", "Click", 2022, "Gas");
+        Truck truck = new Truck("Isuzu", "Elf", 2020, 6);
 
-        Vehicle v3 = new Vehicle("Ford", "Ranger", 1983);
+        printDetails(car);
+        printDetails(motorcycle);
+        printDetails(truck);
 
-        v3.displayInfo();
-        System.out.println("Brand: " + v3.getBrand());
-        System.out.println("Model: " + v3.getModel());
-        System.out.println("Year: " + v3.getYear());
-        System.out.println("Age: " + v3.calculateAge());
-        System.out.println("Vintage: " + v3.isVintage());
-        System.out.println();
+       // DEMO 3: Polymorphic Array
+        System.out.println("\n=== 3. Polymorphic Array ===");
 
-        System.out.println("setYear(2000): " + v1.setYear(2000));
-        System.out.println("Stored year: " + v1.getYear());
-        System.out.println("Age: " + v1.calculateAge());
-        System.out.println("Vintage: " + v1.isVintage());
-        System.out.println();
+        Vehicle[] vehicles = {
+            new Car("Mazda", "3", 2024, 4),
+            new Motorcycle("KTM", "Duke", 2023, "Gas"),
+            new Truck("Fuso", "Canter", 2022, 6)
+        };
 
-        System.out.println("setYear(1885): " + v1.setYear(1885));
-        System.out.println("Stored year: " + v1.getYear());
-        System.out.println();
-
-        System.out.println("setYear(2027): " + v1.setYear(2027));
-        System.out.println("Stored year: " + v1.getYear());
-        System.out.println();
-
-        Vehicle v4 = new Vehicle("BMW", "M3", 1885);
-        System.out.println("New vehicle with year 1885: " + v4.getYear());
-
-        Vehicle v5 = new Vehicle("Nissan", "Silvia", 2027);
-        System.out.println("New vehicle with year 2027: " + v5.getYear());
+        for (Vehicle currentVehicle : vehicles) {
+            printDetails(currentVehicle);
+            System.out.println();
+        }
     }
 }
